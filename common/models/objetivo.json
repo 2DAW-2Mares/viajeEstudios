@@ -1,0 +1,47 @@
+{
+  "name": "Objetivo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "fechaInicio": {
+      "type": "date",
+      "required": true
+    },
+    "fechaFin": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "usuarios": {
+      "type": "hasAndBelongsToMany",
+      "model": "Usuario",
+      "foreignKey": ""
+    },
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": ""
+    },
+    "centro": {
+      "type": "belongsTo",
+      "model": "centro",
+      "foreignKey": ""
+    },
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

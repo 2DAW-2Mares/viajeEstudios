@@ -2,5 +2,21 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mysqlDs": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "getting_started_intermediate",
+    "username": "root",
+    "password": "alumno",
+    "name": "mysqlDs",
+    "connector": "mysql"
+  },
+  "mongoDs": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "getting_started_intermediate",
+    "name": "mongoDs",
+    "connector": "mongodb"
   }
 }
