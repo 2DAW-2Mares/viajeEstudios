@@ -34,5 +34,37 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Ingreso": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Objetivo": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Pedido": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DetallesPedido": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Producto": {
+    "dataSource": "db",
+    "public": true
+  },
+  "TipoProducto": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Proveedor": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Centro": {
+    "dataSource": "db",
+    "public": true
   }
 }
