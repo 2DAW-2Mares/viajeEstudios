@@ -1,0 +1,21 @@
+{
+  "name": "Ingreso",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cantidad": {
+      "type": "number",
+      "required": true
+    },
+    "verificado": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Centro",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CodigoCentro": {
+      "type": "string",
+      "required": true
+    },
+    "Nombre": {
+      "type": "string",
+      "required": true
+    },
+    "Localidad": {
+      "type": "string"
+    },
+    "Verificado": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
