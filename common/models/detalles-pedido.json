@@ -1,0 +1,32 @@
+{
+  "name": "DetallesPedido",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cantidadPedida": {
+      "type": "number",
+      "required": true
+    },
+    "cantidadEntregada": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pedido": {
+      "type": "belongsTo",
+      "model": "Pedido",
+      "foreignKey": ""
+    },
+    "producto": {
+      "type": "belongsTo",
+      "model": "Producto",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

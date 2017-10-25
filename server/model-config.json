@@ -34,5 +34,41 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Pedido": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "Ingreso": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "Objetivo": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "TipoProducto": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "Producto": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "Proveedor": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "Centro": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "Usuario": {
+    "dataSource": "Msql",
+    "public": true
+  },
+  "DetallesPedido": {
+    "dataSource": "Msql",
+    "public": true
   }
 }
