@@ -26,7 +26,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "objetivos": {
+      "type": "hasMany",
+      "model": "Objetivo",
+      "foreignKey": ""
+    },
+    "usuarios": {
+      "type": "hasOne",
+      "model": "Usuario",
+      "foreignKey": "Coordinador"
+    }
+  },
   "acls": [],
   "methods": {}
 }

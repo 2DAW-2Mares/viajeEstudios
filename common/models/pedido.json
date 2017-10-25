@@ -10,9 +10,26 @@
       "type": "date",
       "required": true
     }
-    },
+  },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "productos": {
+      "type": "hasMany",
+      "model": "Producto",
+      "foreignKey": "",
+      "through": "DetallesPedido"
+    },
+    "objetivo": {
+      "type": "belongsTo",
+      "model": "Objetivo",
+      "foreignKey": ""
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "alumnoId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

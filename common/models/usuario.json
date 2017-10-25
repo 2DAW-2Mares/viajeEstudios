@@ -26,7 +26,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "centros": {
+      "type": "hasOne",
+      "model": "Centro",
+      "foreignKey": "Coordinador"
+    },
+    "centro": {
+      "type": "belongsTo",
+      "model": "Centro",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
