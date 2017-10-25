@@ -15,6 +15,6 @@
 .project
 .strong-pm
 coverage
-netbeans
+nbproject
 node_modules
 npm-debug.log
