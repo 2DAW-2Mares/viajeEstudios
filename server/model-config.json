@@ -34,5 +34,41 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "pedido": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "ingreso": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "objetivo": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "tipoProducto": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "producto": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "usuario": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "centro": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "proveedor": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "detallesPedido": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }
