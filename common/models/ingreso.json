@@ -1,0 +1,32 @@
+{
+  "name": "ingreso",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cantidad": {
+      "type": "number",
+      "required": true
+    },
+    "verificado": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "objetivo": {
+      "type": "belongsTo",
+      "model": "objetivo",
+      "foreignKey": ""
+    },
+    "tipoproducto": {
+      "type": "belongsTo",
+      "model": "tipoproducto",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
