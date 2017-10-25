@@ -1,0 +1,38 @@
+{
+  "name": "Ingreso",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cantidad": {
+      "type": "number",
+      "required": true
+    },
+    "verificado": {
+      "type": "boolean",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tipoProducto": {
+      "type": "belongsTo",
+      "model": "TipoProducto",
+      "foreignKey": ""
+    },
+    "objetivo": {
+      "type": "belongsTo",
+      "model": "Objetivo",
+      "foreignKey": ""
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
