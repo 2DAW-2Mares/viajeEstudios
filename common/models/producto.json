@@ -1,0 +1,26 @@
+{
+  "name": "Producto",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "descripcion": {
+      "type": "string"
+    },
+    "referencia": {
+      "type": "string"
+    },
+    "precioVenta": {
+      "type": "number"
+    },
+    "beneficio": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

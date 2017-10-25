@@ -1,0 +1,26 @@
+{
+  "name": "Objetivo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string"
+    },
+    "fechaInicio": {
+      "type": "date"
+    },
+    "fechaFin": {
+      "type": "date"
+    },
+    "centroId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
