@@ -1,0 +1,50 @@
+{
+  "name": "Ingreso",
+  "plural": "Ingresos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cantidad": {
+      "type": "number",
+      "required": true
+    },
+    "verificado": {
+      "type": "boolean"
+    },
+    "tipoProductoId": {
+      "type": "number",
+      "required": true
+    },
+    "alumnoId": {
+      "type": "number",
+      "required": true
+    },
+    "objetivoId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "alumnoId"
+    },
+    "objetivo": {
+      "type": "belongsTo",
+      "model": "Objetivo",
+      "foreignKey": "objetivoId"
+    },
+    "tipoProducto": {
+      "type": "belongsTo",
+      "model": "TipoProducto",
+      "foreignKey": "tipoProductoId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

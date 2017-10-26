@@ -1,0 +1,43 @@
+{
+  "name": "DetallesPedido",
+  "plural": "DetallesPedidos",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "productoId": {
+      "type": "number",
+      "id": "1",
+      "required": true
+    },
+    "pedidoId": {
+      "type": "number",
+      "id": "2",
+      "required": true
+    },
+    "cantidadPedida": {
+      "type": "number",
+      "required": true
+    },
+    "cantidadEntrega": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pedido": {
+      "type": "belongsTo",
+      "model": "Pedido",
+      "foreignKey": "pedidoId"
+    },
+    "producto": {
+      "type": "belongsTo",
+      "model": "Producto",
+      "foreignKey": "productoId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
