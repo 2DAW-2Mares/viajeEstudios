@@ -1,0 +1,47 @@
+{
+  "name": "objetivo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "fechaInicio": {
+      "type": "date",
+      "required": true
+    },
+    "fechaFin": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pedidos": {
+      "type": "hasMany",
+      "model": "pedido",
+      "foreignKey": "alumnoid"
+    },
+    "ingresos": {
+      "type": "hasMany",
+      "model": "ingreso",
+      "foreignKey": ""
+    },
+    "usuarios": {
+      "type": "hasAndBelongsToMany",
+      "model": "usuario",
+      "foreignKey": ""
+    },
+    "centro": {
+      "type": "belongsTo",
+      "model": "centro",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
