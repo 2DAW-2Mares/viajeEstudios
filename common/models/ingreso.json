@@ -16,20 +16,20 @@
   },
   "validations": [],
   "relations": {
-    "objetivo": {
+    "usuario": {
       "type": "belongsTo",
-      "model": "Objetivo",
-      "foreignKey": ""
+      "model": "Usuario",
+      "foreignKey": "alumnoId"
     },
     "tipoProducto": {
       "type": "belongsTo",
       "model": "TipoProducto",
       "foreignKey": ""
     },
-    "usuario": {
+    "objetivo": {
       "type": "belongsTo",
-      "model": "Usuario",
-      "foreignKey": "alumnoId"
+      "model": "Objetivo",
+      "foreignKey": ""
     }
   },
   "acls": [],

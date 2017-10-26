@@ -14,6 +14,14 @@
       "type": "string",
       "required": true
     },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
     "nre": {
       "type": "string"
     },
@@ -21,19 +29,28 @@
       "type": "string"
     },
     "curso": {
-      "type": "string",
-      "required": true
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "centros": {
-      "type": "hasOne",
-      "model": "Centro",
-      "foreignKey": "Coordinador"
+    "objetivos": {
+      "type": "hasAndBelongsToMany",
+      "model": "Objetivo",
+      "foreignKey": ""
+    },
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": "alumnoId"
+    },
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
+      "foreignKey": "alumnoId"
     },
     "centro": {
-      "type": "belongsTo",
+      "type": "hasOne",
       "model": "Centro",
       "foreignKey": ""
     }

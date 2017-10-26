@@ -19,21 +19,17 @@
     },
     "Verificado": {
       "type": "boolean"
-    },
-    "Coordinador": {
-      "type": "number",
-      "required": true
     }
   },
   "validations": [],
   "relations": {
-    "objetivos": {
+    "usuario": {
       "type": "hasMany",
-      "model": "Objetivo",
-      "foreignKey": ""
+      "model": "Usuario",
+      "foreignKey": "centroId"
     },
-    "usuarios": {
-      "type": "hasOne",
+    "coordinador": {
+      "type": "belongsTo",
       "model": "Usuario",
       "foreignKey": "Coordinador"
     }

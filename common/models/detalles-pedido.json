@@ -16,15 +16,15 @@
   },
   "validations": [],
   "relations": {
-    "pedido": {
-      "type": "belongsTo",
-      "model": "Pedido",
-      "foreignKey": "pedidoId"
-    },
     "producto": {
       "type": "belongsTo",
       "model": "Producto",
-      "foreignKey": "productoId"
+      "foreignKey": ""
+    },
+    "pedido": {
+      "type": "belongsTo",
+      "model": "Pedido",
+      "foreignKey": ""
     }
   },
   "acls": [],

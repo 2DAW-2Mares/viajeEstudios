@@ -21,24 +21,14 @@
   },
   "validations": [],
   "relations": {
-    "pedidos": {
-      "type": "hasMany",
-      "model": "Pedido",
-      "foreignKey": ""
-    },
-    "ingresos": {
-      "type": "hasMany",
-      "model": "Ingreso",
-      "foreignKey": ""
-    },
     "usuarios": {
       "type": "hasAndBelongsToMany",
       "model": "Usuario",
       "foreignKey": ""
     },
-    "centro": {
-      "type": "belongsTo",
-      "model": "Centro",
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
       "foreignKey": ""
     }
   },
