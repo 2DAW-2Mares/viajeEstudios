@@ -24,7 +24,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "proveedor": {
+      "type": "belongsTo",
+      "model": "Proveedor",
+      "foreignKey": ""
+    },
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": "productoId",
+      "through": "DetallesPedido"
+    },
+    "tipoProducto": {
+      "type": "belongsTo",
+      "model": "TipoProducto",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

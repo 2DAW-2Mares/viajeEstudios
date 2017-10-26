@@ -22,7 +22,23 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "usuarios": {
+      "type": "hasMany",
+      "model": "Usuario",
+      "foreignKey": ""
+    },
+    "coordinador": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "Coordinador"
+    },
+    "objetivos": {
+      "type": "hasMany",
+      "model": "Objetivo",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

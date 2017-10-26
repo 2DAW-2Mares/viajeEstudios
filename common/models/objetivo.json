@@ -20,7 +20,28 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "usuarios": {
+      "type": "hasAndBelongsToMany",
+      "model": "Usuario",
+      "foreignKey": ""
+    },
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": ""
+    },
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
+      "foreignKey": ""
+    },
+    "centro": {
+      "type": "belongsTo",
+      "model": "Centro",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

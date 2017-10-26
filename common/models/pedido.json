@@ -12,7 +12,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "productos": {
+      "type": "hasMany",
+      "model": "Producto",
+      "foreignKey": "pedidoId",
+      "through": "DetallesPedido"
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "alumnoId"
+    },
+    "objetivos": {
+      "type": "hasMany",
+      "model": "Objetivo",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

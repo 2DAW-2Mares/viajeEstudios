@@ -15,7 +15,23 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "alumnoId"
+    },
+    "tipoProducto": {
+      "type": "belongsTo",
+      "model": "TipoProducto",
+      "foreignKey": ""
+    },
+    "objetivo": {
+      "type": "belongsTo",
+      "model": "Objetivo",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

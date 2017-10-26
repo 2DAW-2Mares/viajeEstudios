@@ -34,7 +34,33 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "centro": {
+      "type": "belongsTo",
+      "model": "Centro",
+      "foreignKey": ""
+    },
+    "coordinador": {
+      "type": "belongsTo",
+      "model": "Centro",
+      "foreignKey": "Coordinador"
+    },
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
+      "foreignKey": "alumnoId"
+    },
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": "alumnoId"
+    },
+    "objetivos": {
+      "type": "hasAndBelongsToMany",
+      "model": "Objetivo",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
