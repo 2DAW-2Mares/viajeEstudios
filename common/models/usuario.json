@@ -1,0 +1,57 @@
+{
+  "name": "Usuario",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "apellidos": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "default": "password"
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "nre": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "curso": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ingresos": {
+      "type": "hasAndBelongsToMany",
+      "model": "Ingreso",
+      "foreignKey": ""
+    },
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": ""
+    },
+    "centro": {
+      "type": "belongsTo",
+      "model": "Centro",
+      "foreignKey": "centroId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
