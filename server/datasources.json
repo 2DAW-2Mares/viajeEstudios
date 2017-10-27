@@ -7,8 +7,8 @@
     "host": "localhost",
     "port": 3306,
     "url": "",
-    "database": "viajeEstudios",
-    "password": "alumno",
+    "database": "viaje_estudios",
+    "password": "1234",
     "name": "mysqlDs",
     "user": "root",
     "connector": "mysql"

@@ -6,18 +6,18 @@
     "validateUpsert": true
   },
   "properties": {
-    "CodigoCentro": {
+    "codigocentro": {
       "type": "string",
       "required": true
     },
-    "Nombre": {
+    "nombre": {
       "type": "string",
       "required": true
     },
-    "Localidad": {
+    "localidad": {
       "type": "string"
     },
-    "Verificado": {
+    "verificado": {
       "type": "boolean"
     }
   },
