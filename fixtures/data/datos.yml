@@ -1,54 +1,81 @@
+Centro:
+  centro1:
+    codigocentro: "30005338"
+    nombre: "I.E.S. Dos Mares"
+    localidad: "San Pedro del Pinatar"
+    verificado: true
+#    coordinador: "@usuario1"
+  centro2:
+    codigocentro: "{{random.number}}"
+    nombre: "{{company.companyName}}"
+    localidad: "{{address.city}}"
+    verificado: "{{random.boolean}}"
+#    coordinador: "@usuario2"
+
+Objetivo:
+  objetivo1:
+    nombre: "Viaje de Estudios"
+    fechaInicio: "{{date.past}}"
+    fechaFin: "{{date.future}}"
+    centroId: @centro1
+  objetivo2:
+    nombre: "Erasmus+"
+    fechaInicio: "{{date.past}}"
+    fechaFin: "{{date.future}}"
+    centroId: @centro1
+
 Usuario:
-  usuario{1..10}:
+  usuario1:
+    nombre: "Administrador"
+    apellidos: "Viajes Centro"
+    email: "admin.viajes@misviajes.es"
+    password: "alumno"
+    nre: "{{random.word}}"
+    telefono: "{{phone.phoneNumber}}"
+  usuario{2..10}:
     nombre: "{{name.firstName}}"
     apellidos: "{{name.lastName}}"
     email: "{{internet.email}}"
-    password: "{{internet.password}}"
+    password: "alumno"
     nre: "{{random.word}}"
     telefono: "{{phone.phoneNumber}}"
+    objetivos: @objetivo.*
     curso: "{{random.word}}"
-
-Centro:
-  centro{1..5}:
-    codigocentro: "{{random.number}}"
-    nombre: "{{random.word}}"
-    localidad: "{{address.country}}"
-    verificado: "{{random.boolean}}"
-    coordinador: "@usuario{@}"
-
-Producto:
-  producto{1..10}:
-    descripcion: "{{lorem.sentence}}"
-    referencia: "{{commerce.productName}}"
-    precioVenta: "{{commerce.price}}"
-    beneficio: "(function() { return Math.round(Math.random()*100);})()"
-
-Objetivo:
-  objetivo{1..15}:
-    nombre: "{{random.word}}"
-    fechaInicio: "{{date.past}}"
-    fechaFin: "{{date.future}}"
-
-Pedido:
-  pedido{1..20}:
-    fechaPedido: "{{date.past}}"
 
 Proveedor:
   proveedor{1..4}:
     nombre: "{{random.word}}"
 
 TipoProducto:
-  tipoproducto{1..5}:
+  tipoproducto{1..3}:
     nombre: "{{random.word}}"
+
+Producto:
+  producto{1..10}:
+    descripcion: "{{lorem.sentence}}"
+    referencia: "{{commerce.product}}"
+    precioVenta: "{{commerce.price}}"
+    beneficio: "(function() { return Math.round(Math.random()*100);})()"
+    proveedorId: @proveedor.*
+    tipoProductoId: @tipoproducto.*
+
+Pedido:
+  pedido{1..5}:
+    fechaPedido: "{{date.recent}}"
+    objetivoId: @objetivo.*
+    alumnoId: @usuario.*
 
 Ingreso:
   ingreso{1..12}:
     cantidad: "{{random.number}}"
     verificado: "{{random.boolean}}"
+    tipoProductoId: "@tipoproducto.*"
+    objetivoId: @objetivo.*
+    alumnoId: @usuario.*
 
 DetallesPedido:
-  detallespedido{1..10}:
+  detallespedido{1..20}:
     cantidadPedido: "{{random.number}}"
     cantidadEntrega: "{{random.number}}"
-    pedidoId: "@pedido{@}"
-    productoId: "@producto{@}"
+    pedidoId: @pedido.*
+    productoId: @producto.*
