@@ -50,10 +50,10 @@
       "model": "Objetivo",
       "foreignKey": ""
     },
-    "Coordinador": {
+    "coordinador": {
       "type": "hasOne",
       "model": "Centro",
-      "foreignKey": "Coordinador"
+      "foreignKey": "coordinador"
     },
     "centro": {
       "type": "belongsTo",
