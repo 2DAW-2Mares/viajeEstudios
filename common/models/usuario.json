@@ -1,6 +1,6 @@
 {
   "name": "Usuario",
-  "base": "PersistedModel",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -14,14 +14,6 @@
       "type": "string",
       "required": true
     },
-    "email": {
-      "type": "string",
-      "required": true
-    },
-    "password": {
-      "type": "string",
-      "required": true
-    },
     "nre": {
       "type": "string"
     },
@@ -29,8 +21,7 @@
       "type": "string"
     },
     "curso": {
-      "type": "string",
-      "required": true
+      "type": "string"
     }
   },
   "validations": [],
