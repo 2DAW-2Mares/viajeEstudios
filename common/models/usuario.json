@@ -22,7 +22,33 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": ""
+    },
+    "centros": {
+      "type": "hasOne",
+      "model": "Centro",
+      "foreignKey": ""
+    },
+    "centro": {
+      "type": "belongsTo",
+      "model": "Centro",
+      "foreignKey": ""
+    },
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
+      "foreignKey": "alumnoId"
+    },
+    "objetivos": {
+      "type": "hasAndBelongsToMany",
+      "model": "Objetivo",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

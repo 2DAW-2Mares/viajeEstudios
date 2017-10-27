@@ -11,7 +11,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
+      "foreignKey": ""
+    },
+    "productos": {
+      "type": "hasMany",
+      "model": "Producto",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

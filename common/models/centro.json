@@ -20,13 +20,16 @@
     "Verificado": {
       "type": "boolean",
       "required": true
-    },
-    "Coordinador": {
-      "type": "number"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "usuarios": {
+      "type": "hasMany",
+      "model": "Usuario",
+      "foreignKey": "centroId"
+    }
+  },
   "acls": [],
   "methods": {}
 }
