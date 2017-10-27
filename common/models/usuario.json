@@ -1,0 +1,61 @@
+{
+  "name": "Usuario",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string"
+    },
+    "apellidos": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "nre": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "curso": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "centro": {
+      "type": "belongsTo",
+      "model": "Centro",
+      "foreignKey": "centroId"
+    },
+    "ingresos": {
+      "type": "hasMany",
+      "model": "Ingreso",
+      "foreignKey": "alumnoId"
+    },
+    "objetivos": {
+      "type": "hasAndBelongsToMany",
+      "model": "Objetivo",
+      "foreignKey": ""
+    },
+    "Coordinador": {
+      "type": "hasOne",
+      "model": "Centro",
+      "foreignKey": "Coordinador"
+    },
+    "pedidos": {
+      "type": "hasMany",
+      "model": "Pedido",
+      "foreignKey": "alumnoId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

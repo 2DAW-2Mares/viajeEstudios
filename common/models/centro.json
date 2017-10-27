@@ -1,0 +1,40 @@
+{
+  "name": "Centro",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CodigoCentro": {
+      "type": "string"
+    },
+    "Nombre": {
+      "type": "string"
+    },
+    "Localidad": {
+      "type": "string"
+    },
+    "Verificado": {
+      "type": "boolean"
+    },
+    "Coordinador": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "usuarios": {
+      "type": "hasMany",
+      "model": "Usuario",
+      "foreignKey": "centroId"
+    },
+    "objetivos": {
+      "type": "hasMany",
+      "model": "Objetivo",
+      "foreignKey": "centroId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

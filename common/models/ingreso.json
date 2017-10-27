@@ -1,0 +1,29 @@
+{
+  "name": "Ingreso",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "usuarios": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "alumnoId"
+    },
+    "objetivos": {
+      "type": "belongsTo",
+      "model": "Objetivo",
+      "foreignKey": "objetivoId"
+    },
+    "tipoProducto": {
+      "type": "belongsTo",
+      "model": "tipoProducto",
+      "foreignKey": "tipoProductoId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
