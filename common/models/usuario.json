@@ -8,20 +8,25 @@
   "properties": {
     "nombre": {
       "type": "string",
+      "length":25,
       "required": true
     },
     "apellidos": {
       "type": "string",
+      "length":50,
       "required": true
     },
     "nre": {
-      "type": "string"
+      "type": "number"
     },
     "telefono": {
-      "type": "string"
+      "type": "string",
+      "length":25
+
     },
     "curso": {
-      "type": "string"
+      "type": "string",
+      "length":15
     }
   },
   "validations": [],

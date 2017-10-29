@@ -30,17 +30,16 @@ Usuario:
     apellidos: "Viajes Centro"
     email: "admin.viajes@misviajes.es"
     password: "alumno"
-    nre: "{{random.word}}"
     telefono: "{{phone.phoneNumber}}"
   usuario{2..10}:
     nombre: "{{name.firstName}}"
     apellidos: "{{name.lastName}}"
     email: "{{internet.email}}"
     password: "alumno"
-    nre: "{{random.word}}"
+    nre: "{{random.number}}"
     telefono: "{{phone.phoneNumber}}"
     objetivos: @objetivo.*
-    curso: "{{random.word}}"
+    curso: "{{system.fileExt}}"
 
 Proveedor:
   proveedor{1..4}:

@@ -12,6 +12,7 @@
     },
     "referencia": {
       "type": "string",
+      "length":20,
       "required": true
     },
     "precioVenta": {

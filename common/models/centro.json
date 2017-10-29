@@ -7,15 +7,17 @@
   },
   "properties": {
     "codigocentro": {
-      "type": "string",
+      "type": "number",
       "required": true
     },
     "nombre": {
       "type": "string",
+      "length":80,
       "required": true
     },
     "localidad": {
-      "type": "string"
+      "type": "string",
+      "length":50
     },
     "verificado": {
       "type": "boolean"
