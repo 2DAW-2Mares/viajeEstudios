@@ -2,15 +2,5 @@
   "db": {
     "name": "db",
     "connector": "memory"
-  },
-  "mysqlDs": {
-    "host": "localhost",
-    "port": 3306,
-    "url": "",
-    "database": "viaje_estudios",
-    "password": "1234",
-    "name": "mysqlDs",
-    "user": "root",
-    "connector": "mysql"
   }
 }
