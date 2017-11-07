@@ -69,6 +69,12 @@
   },
   "Usuario": {
     "dataSource": "mysqlDs",
-    "public": true
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "Email": {
+    "dataSource": "myEmailDataSource"
   }
 }

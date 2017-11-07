@@ -18,9 +18,17 @@
 </section>
 
 <section>
-  <form action="/api/users" method="post">
+  <form action="/api/Usuarios" method="post">
     <fieldset>
       <legend>Sign up form</legend>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" />
+      </div>
+      <div>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos"/>
+      </div>
       <div>
         <label for="email">Email:</label>
         <input type="text" name="email" value="<%= email %>"/>

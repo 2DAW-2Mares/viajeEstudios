@@ -5,7 +5,7 @@
   },
   "loopback-fixtures": {
     "fixturePath": "/fixtures/data/",
-    "append": false,
+    "append": true,
     "autoLoad": false
   }
 }
