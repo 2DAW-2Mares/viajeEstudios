@@ -17,7 +17,7 @@ module.exports = function(Usuario) {
 
     user.verify(options, function(err, response) {
       if (err) {
-        User.destroyById(user.id);
+        Usuario.destroyById(user.id);
         return next(err);
       }
       context.res.render('response', {
