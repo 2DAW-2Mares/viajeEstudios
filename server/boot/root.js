@@ -53,5 +53,14 @@ module.exports = function(server) {
     });
   });
 
+  //log a user out
+  router.get('/logout', function(req, res, next) {
+    if (!req.accessToken) return res.sendStatus(401);
+    User.logout(req.accessToken.id, function(err) {
+      if (err) return next(err);
+      res.redirect('/');
+    });
+  });
+
   server.use(router);
 };
