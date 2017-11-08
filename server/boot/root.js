@@ -12,5 +12,11 @@ module.exports = function(server) {
       password: credentials.pass
     });
   });
+  
+  //verified
+  router.get('/verified', function(req, res) {
+    res.render('verified');
+  });
+
   server.use(router);
 };
