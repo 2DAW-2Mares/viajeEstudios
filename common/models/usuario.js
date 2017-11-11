@@ -1,7 +1,7 @@
 'use strict';
 
 var path = require('path');
-var config = require('../../server/config.json')
+var config = require('../../server/config.local.js')
 
 module.exports = function(Usuario) {
   //send verification email after registration

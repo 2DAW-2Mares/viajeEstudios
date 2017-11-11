@@ -2,14 +2,15 @@
 // Node module: loopback-example-offline-sync
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
+var config = require('./config.local.js')
 
 module.exports = {
   mysqlDs: {
     connector: 'mysql',
-    hostname: process.env.DB_HOST || 'localhost',
-    port: process.env.DB_PORT || 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    hostname: config.db_host,
+    port: config.db_port,
+    user: config.db_user,
+    password: config.db_password,
     database: 'viaje_estudios',
   },
   myEmailDataSource: {
@@ -21,8 +22,8 @@ module.exports = {
       secure: true,
       port: 465,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD
+        user: config.email_user,
+        pass: config.email_password
       }
     }]
   }

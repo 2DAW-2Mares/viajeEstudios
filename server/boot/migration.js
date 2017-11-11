@@ -1,5 +1,7 @@
 'use strict';
 
+var config = require('../config.local.js')
+
 module.exports = function(app) {
     //data sources
     var mysqlDs = app.dataSources.mysqlDs;
@@ -15,8 +17,8 @@ module.exports = function(app) {
                     {
                         nombre: 'Administrador',
                         apellidos: 'Viajes Educativos',
-                        email: process.env.ADMIN_EMAIL,
-                        password: process.env.ADMIN_PASSWORD
+                        email: config.admin_email,
+                        password: config.admin_password
                     }
             , function (err, user) {
                 if (err)
