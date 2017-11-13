@@ -12,12 +12,12 @@
     },
     "nombre": {
       "type": "string",
-      "length":80,
-      "required": true
+      "required": true,
+      "length": 80
     },
     "localidad": {
       "type": "string",
-      "length":50
+      "length": 50
     },
     "verificado": {
       "type": "boolean"
@@ -36,6 +36,32 @@
       "foreignKey": "centroId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "administrador",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    }
+  ],
   "methods": {}
 }

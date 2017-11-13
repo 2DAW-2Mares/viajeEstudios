@@ -8,25 +8,24 @@
   "properties": {
     "nombre": {
       "type": "string",
-      "length":25,
-      "required": true
+      "required": true,
+      "length": 25
     },
     "apellidos": {
       "type": "string",
-      "length":50,
-      "required": true
+      "required": true,
+      "length": 50
     },
     "nre": {
       "type": "number"
     },
     "telefono": {
       "type": "string",
-      "length":25
-
+      "length": 25
     },
     "curso": {
       "type": "string",
-      "length":15
+      "length": 15
     }
   },
   "validations": [],
@@ -57,6 +56,19 @@
       "foreignKey": "centroId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "administrador",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

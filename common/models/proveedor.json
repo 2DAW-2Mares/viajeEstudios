@@ -8,8 +8,8 @@
   "properties": {
     "nombre": {
       "type": "string",
-      "length":80,
-      "required": true
+      "required": true,
+      "length": 80
     }
   },
   "validations": [],
@@ -20,6 +20,19 @@
       "foreignKey": "proveedorId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "administrador",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }
