@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
 
+
+//Aumentado EventEmitter.prototype._maxListeners = 15 
+require('events').EventEmitter.prototype._maxListeners = 15;
+
 // configure view handler
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -15,6 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(loopback.token());
+
 
 app.start = function() {
   // start the web server
