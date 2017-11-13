@@ -4,7 +4,8 @@
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
-      "./models"
+      "./models",
+      "../node_modules/loopback-component-passport/lib/models"
     ],
     "mixins": [
       "loopback/common/mixins",
@@ -73,6 +74,18 @@
     "options": {
       "emailVerificationRequired": true
     }
+  },
+  "accessToken": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "userCredential": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "userIdentity": {
+    "dataSource": "mysqlDs",
+    "public": true
   },
   "Email": {
     "dataSource": "myEmailDataSource"

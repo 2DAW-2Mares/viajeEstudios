@@ -1,0 +1,20 @@
+<h2>Third Party Profile(s)</h2>
+
+    <% if(user.profiles.length !== 0) { %>
+      <% user.profiles.forEach(function(profile) { %>
+        <h4> profile.provider + ':' </h4>
+        <% JSON.stringify(profile) %>
+      <% }) %>
+    <% } %>
+    <h2> Linked Account(s) </h2>
+  <ul>
+    <li>
+      <a href="/link/google")><button>Link Google</button></a>
+    </li>
+  </ul>
+    <% if(user.accounts.length !== 0) { %>
+      <% user.accounts.forEach(function(account) { %>
+        <h4> account.provider + ':' </h4>
+        <% JSON.stringify(account) %>
+      <% }) %>
+    <% } %>

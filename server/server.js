@@ -4,8 +4,23 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session')
 
 var app = module.exports = loopback();
+
+// Create an instance of PassportConfigurator with the app instance
+var PassportConfigurator = require('loopback-component-passport').PassportConfigurator;
+var passportConfigurator = new PassportConfigurator(app);
+
+// attempt to build the providers/passport config
+var config = {};
+try {
+  config = require('./providers.js');
+} catch (err) {
+  console.trace(err);
+  process.exit(1); // fatal
+}
 
 // configure view handler
 app.set('view engine', 'ejs');
@@ -38,3 +53,36 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
+
+// to support JSON-encoded bodies
+app.middleware('parse', bodyParser.json());
+// to support URL-encoded bodies
+app.middleware('parse', bodyParser.urlencoded({
+  extended: true,
+}));
+
+// The access token is only available after boot
+app.middleware('auth', loopback.token({
+  model: app.models.accessToken,
+}));
+
+app.middleware('session:before', cookieParser(app.get('cookieSecret')));
+app.middleware('session', session({
+  secret: 'kitty',
+  saveUninitialized: true,
+  resave: true,
+}));
+passportConfigurator.init();
+
+// Set up related models
+passportConfigurator.setupModels({
+ userModel: app.models.Usuario,
+ userIdentityModel: app.models.userIdentity,
+ userCredentialModel: app.models.userCredential
+});
+// Configure passport strategies for third party auth providers
+for(var s in config) {
+ var c = config[s];
+ c.session = c.session !== false;
+ passportConfigurator.configureProvider(s, c);
+}

@@ -19,6 +19,7 @@ module.exports = {
     },
     cors: false
   },
+  cookieSecret: 'cookieSecret',
   db_host: process.env.DB_HOST || 'localhost',
   db_port: process.env.DB_PORT || 3306,
   db_user: process.env.DB_USER,
@@ -27,4 +28,6 @@ module.exports = {
   email_password: process.env.EMAIL_PASSWORD,
   admin_email: process.env.ADMIN_EMAIL,
   admin_password: process.env.ADMIN_PASSWORD,
+  google_client_id: process.env.GOOGLE_CLIENT_ID,
+  google_client_secret: process.env.GOOGLE_CLIENT_SECRET
 }

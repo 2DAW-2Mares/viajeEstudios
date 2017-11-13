@@ -87,5 +87,12 @@ module.exports = function(server) {
     });
   });
 
+  router.get('/auth/account', function(req, res, next) {console.info(req.user);console.info(req.url)
+    res.render('loginProfiles', {
+      user: req.user,
+      url: req.url,
+    });
+  });
+
   server.use(router);
 };
