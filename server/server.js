@@ -5,6 +5,9 @@ var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
 
+//Aumentado EventEmitter.prototype._maxListeners = 15 
+require('events').EventEmitter.prototype._maxListeners = 15;
+
 app.start = function() {
   // start the web server
   return app.listen(function() {
