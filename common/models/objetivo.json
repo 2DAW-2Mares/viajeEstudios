@@ -8,8 +8,8 @@
   "properties": {
     "nombre": {
       "type": "string",
-      "length":30,
-      "required": true
+      "required": true,
+      "length": 30
     },
     "fechaInicio": {
       "type": "date",
@@ -43,6 +43,19 @@
       "foreignKey": ""
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "administrador",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

@@ -12,8 +12,8 @@
     },
     "referencia": {
       "type": "string",
-      "length":20,
-      "required": true
+      "required": true,
+      "length": 20
     },
     "precioVenta": {
       "type": "number",
@@ -42,6 +42,19 @@
       "foreignKey": "tipoProductoId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "administrador",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

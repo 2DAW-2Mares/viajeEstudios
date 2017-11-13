@@ -8,8 +8,8 @@
   "properties": {
     "nombre": {
       "type": "string",
-      "length":45,
-      "required": true
+      "required": true,
+      "length": 45
     }
   },
   "validations": [],
@@ -25,6 +25,19 @@
       "foreignKey": "tipoProductoId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "administrador",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }
