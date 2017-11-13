@@ -63,5 +63,24 @@
       "property": "create"
     }
   ],
-  "methods": {}
+  "methods": {
+    "prototype.verifycado": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "this",
+          "type": "object",
+          "root": true,
+          "description": "el objeto"
+        }
+      ],
+      "description": "Va a cambiar el estado de verificado de un centro solo lo podra usar el admin",
+      "http": [
+        {
+          "path": "/verifycado",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
