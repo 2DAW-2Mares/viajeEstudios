@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(Centro) {
+module.exports = function (Centro) {
     Centro.validatesNumericalityOf('codigocentro', {int: true, message: 'Debe ser un número sin decimales'});
     Centro.validatesUniquenessOf('codigocentro', {message: 'Ese centro ya existe'});
 
@@ -9,7 +9,7 @@ module.exports = function(Centro) {
         context.args.data.coordinador = context.req.accessToken.userId;
         next();
     });
-  
+
     Centro.afterRemote('create', function (context, centro, next) {
         var options = {
             type: 'email',
@@ -26,5 +26,18 @@ module.exports = function(Centro) {
         });
         next();
     });
+
+    /**
+     * Va a cambiar el estado de verificado de un centro solo lo podra usar el admin
+     * @param {Function(Error, object)} callback
+     */
+
+    Centro.prototype.verifycado = function (callback) {
+   
+        this.verificado = true;
+        this.save();      
+        callback(null, this);
+    };
+
 
 };
