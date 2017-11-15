@@ -1,7 +1,7 @@
 'use strict';
 var _ = require('lodash');
 
-module.exports = function(Centro) {
+module.exports = function (Centro) {
     Centro.validatesNumericalityOf('codigocentro', {int: true, message: 'Debe ser un número sin decimales'});
     Centro.validatesUniquenessOf('codigocentro', {message: 'Ese centro ya existe'});
 
@@ -84,5 +84,18 @@ module.exports = function(Centro) {
         });
         next();
     });
+
+    /**
+     * Va a cambiar el estado de verificado de un centro solo lo podra usar el admin
+     * @param {Function(Error, object)} callback
+     */
+
+    Centro.prototype.verifycado = function (callback) {
+   
+        this.verificado = true;
+        this.save();      
+        callback(null, this);
+    };
+
 
 };
