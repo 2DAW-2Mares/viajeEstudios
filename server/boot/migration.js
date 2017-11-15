@@ -26,7 +26,7 @@ module.exports = function(app) {
 
                 //create the admin role
                 Role.create({
-                    name: 'administrador'
+                    name: app.get(admin_role)
                 }, function (err, role) {
                     if (err)
                         throw err;

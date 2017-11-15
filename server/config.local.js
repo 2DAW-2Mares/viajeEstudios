@@ -27,4 +27,5 @@ module.exports = {
   email_password: process.env.EMAIL_PASSWORD,
   admin_email: process.env.ADMIN_EMAIL,
   admin_password: process.env.ADMIN_PASSWORD,
+  admin_role: "administrador"
 }
