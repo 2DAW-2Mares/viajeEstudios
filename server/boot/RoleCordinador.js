@@ -2,42 +2,32 @@ module.exports = function (app) {
     var Role = app.models.Role;
 
     Role.registerResolver('RolCordinador', function (role, context, cb) {
-        // Q: Is the current request accessing a Project?
+        // Comprobamos a que centro esta haciendo la peticion
         if (context.modelName !== 'Centro') {
-            // A: No. This role is only for projects: callback with FALSE
+            // Si esta accediento a otro metodo que no sea Centro no seguimos
             return process.nextTick(() => cb(null, false));
         }
-
-        //Q: Is the user logged in? (there will be an accessToken with an ID if so)
+        //Vamos a comprovar si hay algun usuario loggeado
         var userId = context.accessToken.userId;
         if (!userId) {
-            //A: No, user is NOT logged in: callback with FALSE
+            //Si no esta logeado no puede usar la funcion por lo tanto no seguimos
             return process.nextTick(() => cb(null, false));
         }
-
-        // Q: Is the current logged-in user associated with this Project?
-        // Step 1: lookup the requested project
-        context.model.findById(context.modelId, function (err, centro) {
-            // A: The datastore produced an error! Pass error to callback
+        //vamos a comprobar si el centro esta verificado y si el coordinador del centro es el que hace la peticion
+        var Cent = app.models.Centro;
+        Cent.count({
+            coordinador: userId,
+            verificado: true
+        }, function (err, count) {
             if (err)
                 return cb(err);
-            // A: There's no project by this ID! Pass error to callback
-            if (!centro)
-                return cb(new Error("Centro not found"));
-
-            // Step 2: check if User is part of the Team associated with this Project
-            // (using count() because we only want to know if such a record exists)
-            var Centro = app.models.Centro;
-
-            if (centro.verificado) {
-                if (centro.coordinador == userId) {
-                    return process.nextTick(() => cb(null, true));
-                }
+            if (count > 0) {
+                return cb(null, true);
             } else {
-                return process.nextTick(() => cb(null, false));
+                return cb(null, false);
             }
-
-
         });
+
+
     });
 };
